@@ -22,14 +22,14 @@ const homeStackScreens = [
   {
     name: "home",
     component: HomePage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
-    label: "Home",
+    label: "",
   },
   {
-    name: "settings",
+    name: "home-settings",
     component: SettingsPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Settings",
   },
@@ -58,14 +58,14 @@ const HomeNavigator = () => {
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
-              screen.name !== "settings"
+              screen.name !== "home-settings"
                 ? () => (
                     <Icon
                       name="cog"
                       type="font-awesome"
                       color={COLORS.PRIMARY}
                       size={24}
-                      onPress={() => navigator.navigate("settings")}
+                      onPress={() => navigator.navigate("home-settings")}
                       style={{ marginRight: 12 }}
                     />
                   )

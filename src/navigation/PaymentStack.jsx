@@ -20,16 +20,16 @@ const screenOptions = {
 
 const paymentStackScreens = [
   {
-    name: "payment-list",
+    name: "payment",
     component: PaymentPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Payment",
   },
   {
-    name: "settings",
+    name: "payment-settings",
     component: SettingsPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Settings",
   },
@@ -59,14 +59,14 @@ const PaymentNavigator = () => {
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
-              screen.name !== "settings"
+              screen.name !== "payment-settings"
                 ? () => (
                     <Icon
                       name="cog"
                       type="font-awesome"
                       color={COLORS.PRIMARY}
                       size={24}
-                      onPress={() => navigator.navigate("settings")}
+                      onPress={() => navigator.navigate("payment-settings")}
                       style={{ marginRight: 12 }}
                     />
                   )

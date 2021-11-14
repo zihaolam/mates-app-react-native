@@ -1,66 +1,22 @@
 import React, { useState } from "react";
 import { ListItem } from "react-native-elements";
 import Layout from "components/Layout";
-import { Text, View, TextInput } from "react-native";
-import { Button } from "react-native-elements";
-import useModal from "components/Modal";
+import { Text } from "react-native";
 import { styles } from "./style";
 import { COLORS } from "styles";
+import { useUserContext } from "contexts/user";
+import LeaveRoomModal from "./LeaveRoomModal";
+import CreateRoomModal from "./CreateJoinRoomModal";
 
 const SettingsPage = () => {
-  const [errorMsg, setErrorMsg] = useState(false);
-  const [invitationCode, setInvitationCode] = useState("");
+  const [leaveRoomModalVisible, setLeaveRoomModalVisible] = useState(false);
+  const { state: userState } = useUserContext();
 
-  const handleJoinRoom = () => {
-    console.log("join room");
+  const [CreateJoinRoomModal, openCreateJoinRoomModal] = CreateRoomModal();
+
+  const toggleLeaveRoomModal = () => {
+    setLeaveRoomModalVisible(!leaveRoomModalVisible);
   };
-
-  const CreateJoinRoomModalContent = (
-    <View style={styles.roomPageContainer}>
-      <Button
-        title="Create a house"
-        titleStyle={styles.createRoomButtonTitle}
-        buttonStyle={styles.createRoomButton}
-      />
-      <Text style={styles.joinHouseTitle}>Join a house</Text>
-      <View style={styles.inputContainer}>
-        <View style={styles.joinHouseTextInputContainer}>
-          <TextInput
-            placeholder="Invitation Code"
-            style={styles.inputBox}
-            textAlign="center"
-            autoCapitalize="none"
-            value={invitationCode}
-            onChangeText={(text) => {
-              setInvitationCode(text);
-              setErrorMsg(false);
-            }}
-            onSubmitEditing={handleJoinRoom}
-          />
-          <Button
-            title="Join"
-            buttonStyle={styles.joinButton}
-            titleStyle={styles.joinButtonTitle}
-            onPress={handleJoinRoom}
-          />
-        </View>
-
-        <View style={styles.errorContainer}>
-          {errorMsg ? (
-            <Text style={styles.errorText}>Invalid username or password</Text>
-          ) : null}
-        </View>
-      </View>
-    </View>
-  );
-
-  const LeaveRoomModalContent = <Text>FUck you</Text>;
-
-  const [CreateJoinRoomModal, openCreateJoinRoomModal] = useModal(
-    CreateJoinRoomModalContent
-  );
-
-  const [LeaveRoomModal, openLeaveRoomModal] = useModal(LeaveRoomModalContent);
 
   return (
     <>
@@ -76,19 +32,24 @@ const SettingsPage = () => {
           </ListItem.Content>
           <ListItem.Chevron />
         </ListItem>
-        <ListItem bottomDivider onPress={() => openLeaveRoomModal()}>
-          <ListItem.Content>
-            <ListItem.Title>
-              <Text style={[styles.listTitle, { color: COLORS.DANGER }]}>
-                Leave Room
-              </Text>
-            </ListItem.Title>
-          </ListItem.Content>
-          <ListItem.Chevron />
-        </ListItem>
+        {userState.hasRoom && (
+          <ListItem bottomDivider onPress={toggleLeaveRoomModal}>
+            <ListItem.Content>
+              <ListItem.Title>
+                <Text style={[styles.listTitle, { color: COLORS.DANGER }]}>
+                  Leave Room
+                </Text>
+              </ListItem.Title>
+            </ListItem.Content>
+            <ListItem.Chevron />
+          </ListItem>
+        )}
       </Layout>
       {CreateJoinRoomModal}
-      {LeaveRoomModal}
+      <LeaveRoomModal
+        toggleOverlay={toggleLeaveRoomModal}
+        leaveRoomModalVisible={leaveRoomModalVisible}
+      />
     </>
   );
 };

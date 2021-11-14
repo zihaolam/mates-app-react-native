@@ -20,16 +20,16 @@ const screenOptions = {
 
 const foodStackScreens = [
   {
-    name: "food-tracker",
+    name: "food",
     component: FoodPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "",
   },
   {
-    name: "settings",
+    name: "food-settings",
     component: SettingsPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Settings",
   },
@@ -59,14 +59,14 @@ const FoodNavigator = () => {
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
-              screen.name !== "settings"
+              screen.name !== "food-settings"
                 ? () => (
                     <Icon
                       name="cog"
                       type="font-awesome"
                       color={COLORS.PRIMARY}
                       size={24}
-                      onPress={() => navigator.navigate("settings")}
+                      onPress={() => navigator.navigate("food-settings")}
                       style={{ marginRight: 12 }}
                     />
                   )

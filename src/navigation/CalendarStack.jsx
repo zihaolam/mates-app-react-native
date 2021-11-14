@@ -20,16 +20,16 @@ const screenOptions = {
 
 const calendarStackScreens = [
   {
-    name: "calendar",
+    name: "notice",
     component: Calendar,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Calendar",
   },
   {
-    name: "settings",
+    name: "calendar-settings",
     component: SettingsPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Settings",
   },
@@ -58,14 +58,14 @@ const CalendarNavigator = () => {
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
-              screen.name !== "settings"
+              screen.name !== "calendar-settings"
                 ? () => (
                     <Icon
                       name="cog"
                       type="font-awesome"
                       color={COLORS.PRIMARY}
                       size={24}
-                      onPress={() => navigator.navigate("settings")}
+                      onPress={() => navigator.navigate("calendar-settings")}
                       style={{ marginRight: 12 }}
                     />
                   )

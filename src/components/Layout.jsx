@@ -5,14 +5,12 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 10,
+    padding: 10,
   },
 });
 
 const Layout = ({ children }) => (
-  <SafeAreaView>
-    <ScrollView contentContainerStyle={styles.container}>{children}</ScrollView>
-  </SafeAreaView>
+  <ScrollView contentContainerStyle={styles.container}>{children}</ScrollView>
 );
 
 export default Layout;

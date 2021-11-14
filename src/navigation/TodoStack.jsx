@@ -22,14 +22,14 @@ const todoStackScreens = [
   {
     name: "todo-list",
     component: TodoPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Todos",
   },
   {
-    name: "settings",
+    name: "todo-settings",
     component: SettingsPage,
-    headerHeight: 70,
+    headerHeight: 90,
     headerBg: "white",
     label: "Settings",
   },
@@ -58,14 +58,14 @@ const TodoNavigator = () => {
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
-              screen.name !== "settings"
+              screen.name !== "todo-settings"
                 ? () => (
                     <Icon
                       name="cog"
                       type="font-awesome"
                       color={COLORS.PRIMARY}
                       size={24}
-                      onPress={() => navigator.navigate("settings")}
+                      onPress={() => navigator.navigate("todo-settings")}
                       style={{ marginRight: 12 }}
                     />
                   )

@@ -6,20 +6,28 @@ const UserContext = createContext();
 const initialState = {
   isAuthenticated: false,
   username: '',
-  allUsers: users
+  allUsers: users,
+  currentRoom: {},
+  hasRoom: false
 };
 
 
 function userReducer(state, action) {
   switch (action.type) {
     case 'login': {
-      return { isAuthenticated: true, ...action.payload };
+      return { ...state, isAuthenticated: true, ...action.payload };
     }
     case 'logout': {
       return initialState;
     }
     case 'addUser': {
       return {...state, allUsers: [...state.allUsers, action.payload]}
+    }
+    case 'joinRoom': {
+      return {...state, currentRoom: action.payload, hasRoom: true }
+    }
+    case 'leaveRoom': {
+      return {...state, currentRoom: {}, hasRoom: false}
     }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);

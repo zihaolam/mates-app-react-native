@@ -43,7 +43,7 @@ export const bottomTabScreens = [
     iconSize: 32,
   },
   {
-    name: "calendar",
+    name: "notice",
     component: CalendarStack,
     tabBarLabel: "Calendar",
     iconName: "calendar",
