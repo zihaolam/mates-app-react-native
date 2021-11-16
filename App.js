@@ -9,6 +9,7 @@ import { UserProvider } from 'contexts/user';
 import { RoomProvider } from 'contexts/room';
 import RootStack from 'navigation/RootStack';
 import Toast from 'react-native-toast-message';
+import ContextProviders from 'contexts/provider';
 
 export default function App() {
   const [fontsLoaded] = useFonts(fontConfig);
@@ -19,15 +20,13 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <RoomProvider>
-        <UserProvider>
+      <ContextProviders>
           <ThemeProvider theme={theme}>
             <NavigationContainer>
               <RootStack />
             </NavigationContainer>
           </ThemeProvider>
-        </UserProvider>
-      </RoomProvider>
+        </ContextProviders>
       <Toast/>
     </SafeAreaProvider>
   );

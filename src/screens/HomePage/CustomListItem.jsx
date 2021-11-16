@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   listWrapper: {
     marginVertical: 10,
     borderRadius: 15,
-    height: 80,
+    // height: 80,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 15,
     justifyContent: "center",
-    height: "100%",
+    // height: "100%",
     position: "relative",
   },
   imgIcon: {
@@ -42,16 +42,18 @@ const styles = StyleSheet.create({
   },
   listText: {
     justifyContent: "center",
-    alignItems: "center",
+    // alignItems: "center",
     marginLeft: 15,
-    flexDirection: "row",
+    flex: 1,
   },
   listText2: {
     fontSize: 18,
+    flexShrink: 1,
+    flex: 1,
   },
   toolbar: {
     position: "absolute",
-    top: 7,
+    top: 5,
     right: 10,
   },
   toolbarText: {
@@ -80,7 +82,7 @@ const CustomListItem = ({ type, text, postedBy, createdAt }) => {
           />
           <View style={styles.listText}>
             <Text style={styles.listText1}>{postedBy}</Text>
-            <Text style={styles.listText2}> {text}</Text>
+            <Text style={styles.listText2}>{text}</Text>
           </View>
         </View>
         <View style={styles.toolbar}>

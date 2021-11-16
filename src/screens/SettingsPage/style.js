@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 10,
     alignItems: "center",
+    justifyContent: 'center'
   },
   createRoomButtonTitle: {
     ...TYPOGRAPHY.BUTTON_SMALL,
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.PRIMARY,
     marginHorizontal: 5,
     marginTop: 50,
-    marginBottom: 100,
+    marginBottom: 50,
   },
   joinHouseTitle: {
     color: COLORS.PRIMARY,
@@ -81,6 +82,7 @@ export const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 20,
   },
   errorContainer: {
     flexDirection: "row",

@@ -24,6 +24,12 @@ export const homeData = [
 		postedBy: 'inweon',
 		text: 'has updated the grocery list',
 		createdAt: 1636414703000
+	},
+	{
+		type: 'todo',
+		postedBy: 'inweon',
+		text: 'has posted a new todo',
+		createdAt: 1636414703000
 	}
 ]
 

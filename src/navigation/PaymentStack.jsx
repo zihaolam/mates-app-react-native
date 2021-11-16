@@ -22,9 +22,9 @@ const paymentStackScreens = [
   {
     name: "payment",
     component: PaymentPage,
-    headerHeight: 90,
+    headerHeight: 50,
     headerBg: "white",
-    label: "Payment",
+    label: "",
   },
   {
     name: "payment-settings",
@@ -47,15 +47,25 @@ const PaymentNavigator = () => {
           component={screen.component}
           options={{
             title: screen.label,
+            // headerTransparent: true,
             headerTitleStyle: {
               fontSize: TYPOGRAPHY.H3.fontSize,
               fontFamily: AmazonEmber[700],
+              justifyContent: "center",
             },
             headerStyle: {
               height: screen.headerHeight,
               backgroundColor: screen.headerBg,
               elevation: 0,
               shadowColor: "transparent",
+            },
+            headerRightContainerStyle: {
+              marginRight: 10,
+              justifyContent: "center",
+            },
+            headerLeftContainerStyle: {
+              marginLeft: 10,
+              justifyContent: "center",
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
@@ -67,7 +77,6 @@ const PaymentNavigator = () => {
                       color={COLORS.PRIMARY}
                       size={24}
                       onPress={() => navigator.navigate("payment-settings")}
-                      style={{ marginRight: 12 }}
                     />
                   )
                 : undefined,

@@ -6,13 +6,14 @@ import { styles } from "./style";
 import { COLORS } from "styles";
 import { useUserContext } from "contexts/user";
 import LeaveRoomModal from "./LeaveRoomModal";
-import CreateRoomModal from "./CreateJoinRoomModal";
+import useCreateJoinRoomModal from "../CreateJoinRoomPage/useCreateJoinRoomModal";
 
 const SettingsPage = () => {
   const [leaveRoomModalVisible, setLeaveRoomModalVisible] = useState(false);
   const { state: userState } = useUserContext();
 
-  const [CreateJoinRoomModal, openCreateJoinRoomModal] = CreateRoomModal();
+  const [CreateJoinRoomModal, openCreateJoinRoomModal] =
+    useCreateJoinRoomModal();
 
   const toggleLeaveRoomModal = () => {
     setLeaveRoomModalVisible(!leaveRoomModalVisible);

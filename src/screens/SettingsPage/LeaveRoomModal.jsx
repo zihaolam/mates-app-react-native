@@ -16,6 +16,7 @@ const LeaveRoomModal = ({ toggleOverlay, leaveRoomModalVisible }) => {
     Toast.show({
       type: "success",
       text1: "Left Room Successfully",
+      duration: 3000,
     });
     toggleOverlay();
   };

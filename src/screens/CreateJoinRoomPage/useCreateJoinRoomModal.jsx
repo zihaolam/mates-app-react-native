@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Text, View, TextInput } from "react-native";
 import { Button, ListItem, Icon, Overlay } from "react-native-elements";
-import { styles } from "./style";
+import { styles } from "../SettingsPage/style";
 import { useRoomContext } from "contexts/room";
 import { useUserContext } from "contexts/user";
 import { COLORS } from "styles";
@@ -11,7 +11,7 @@ import Toast from "react-native-toast-message";
 
 const height = Dimensions.get("window").height;
 
-const CreateJoinRoomModal = () => {
+const useCreateJoinRoomModal = () => {
   const modalizeRef = useRef(null);
 
   const openModal = () => {
@@ -31,7 +31,7 @@ const CreateJoinRoomModal = () => {
   const showSuccessToast = (roomName) => {
     Toast.show({
       type: "success",
-      visibilityTime: 5000,
+      visibilityTime: 3000,
       text1: `Joined ${roomName}`,
     });
   };
@@ -118,7 +118,7 @@ const CreateJoinRoomModal = () => {
   return [
     <Modalize
       ref={modalizeRef}
-      modalHeight={height - 200 > height * 0.7 ? height * 0.7 : height - 200}
+      modalHeight={Math.max(height - 100, height * 0.8)}
     >
       {CreateHouseModal()}
       <View style={styles.roomPageContainer}>
@@ -157,7 +157,7 @@ const CreateJoinRoomModal = () => {
             </View>
           ) : null}
 
-          <View style={{ marginTop: 50 }}>
+          <View style={{ marginTop: 15 }}>
             <Text style={styles.listHeader}>Rooms nearby you</Text>
             {roomState.rooms.map((room) => (
               <ListItem bottomDivider key={room.id}>
@@ -183,4 +183,4 @@ const CreateJoinRoomModal = () => {
   ];
 };
 
-export default CreateJoinRoomModal;
+export default useCreateJoinRoomModal;

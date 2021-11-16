@@ -22,7 +22,7 @@ const homeStackScreens = [
   {
     name: "home",
     component: HomePage,
-    headerHeight: 90,
+    headerHeight: 50,
     headerBg: "white",
     label: "",
   },
@@ -49,12 +49,21 @@ const HomeNavigator = () => {
             headerTitleStyle: {
               fontSize: TYPOGRAPHY.H3.fontSize,
               fontFamily: AmazonEmber[700],
+              justifyContent: "center",
             },
             headerStyle: {
               height: screen.headerHeight,
               backgroundColor: screen.headerBg,
               elevation: 0,
               shadowColor: "transparent",
+            },
+            headerRightContainerStyle: {
+              marginRight: 10,
+              justifyContent: "center",
+            },
+            headerLeftContainerStyle: {
+              marginLeft: 10,
+              justifyContent: "center",
             },
             headerTintColor: COLORS.PRIMARY,
             headerRight:
@@ -66,7 +75,6 @@ const HomeNavigator = () => {
                       color={COLORS.PRIMARY}
                       size={24}
                       onPress={() => navigator.navigate("home-settings")}
-                      style={{ marginRight: 12 }}
                     />
                   )
                 : undefined,
