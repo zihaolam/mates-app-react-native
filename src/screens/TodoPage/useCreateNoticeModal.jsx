@@ -52,7 +52,7 @@ const CreateNoticeModal = () => {
   return [
     <Modalize
       ref={modalizeRef}
-      modalHeight={Math.min(height - 150, height * 0.9)}
+      modalHeight={Math.min(height - 220, height * 0.9)}
     >
       <View style={styles.TodoModalContainer}>
         <Text style={styles.addTodoTitle}>Add a notice</Text>
