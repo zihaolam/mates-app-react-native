@@ -36,15 +36,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     flexShrink: 1,
     flex: 1,
+    fontFamily: AmazonEmber[300],
   },
   listFooter: {
-    marginHorizontal: 10,
+    marginHorizontal: 20,
     marginTop: 5,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   listFooterText: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: AmazonEmber[700],
   },
 });
