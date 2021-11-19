@@ -43,14 +43,6 @@ export const bottomTabScreens = [
     iconSize: 32,
   },
   {
-    name: "notice",
-    component: CalendarStack,
-    tabBarLabel: "Calendar",
-    iconName: "calendar",
-    iconType: "font-awesome",
-    iconSize: 28,
-  },
-  {
     name: "food",
     component: FoodStack,
     tabBarLabel: "Food",

@@ -15,7 +15,7 @@ function todoReducer(state, action) {
     case "removeTodo": {
       return {
         ...state,
-        allTodos: state.filter((todo) => todo.id !== action.payload),
+        allTodos: state.allTodos.filter((todo) => todo.id !== action.payload),
       };
     }
   }

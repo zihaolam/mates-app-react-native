@@ -125,9 +125,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   listItemContainer: {
-    marginTop: 15,
     paddingHorizontal: 10,
-    marginBottom: 30,
   },
   bottomToolbar: {
     borderRadius: 9999,

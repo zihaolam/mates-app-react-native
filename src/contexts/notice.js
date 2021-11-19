@@ -15,7 +15,7 @@ function noticeReducer(state, action) {
     case "removeNotice": {
       return {
         ...state,
-        allNotices: state.filter((notice) => notice.id !== action.payload),
+        allNotices: state.allNotices.filter((notice) => notice.id !== action.payload),
       };
     }
   }

@@ -14,7 +14,7 @@ function paymentReducer(state, action) {
       return { ...state, allPayments: [...state.allPayments, action.payload]};
     }
     case 'removePayment': {
-		return {...state, allPayments: state.filter(payment => payment.id !== action.payload)}
+		return {...state, allPayments: state.allPayments.filter(payment => payment.id !== action.payload)}
 	}
   }
 }

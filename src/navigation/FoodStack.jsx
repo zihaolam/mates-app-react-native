@@ -22,7 +22,7 @@ const foodStackScreens = [
   {
     name: "food",
     component: FoodPage,
-    headerHeight: 90,
+    headerHeight: 50,
     headerBg: "white",
     label: "",
   },
