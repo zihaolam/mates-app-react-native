@@ -51,6 +51,8 @@ const CreatePaymentModal = () => {
       payload: formState,
     });
     closeModal();
+    setCurrentPage(0);
+    setFormState(initialState);
     showSuccessToast();
   };
 
@@ -211,7 +213,7 @@ const CreatePaymentModal = () => {
   return [
     <Modalize
       ref={modalizeRef}
-      modalHeight={Math.min(height - 150, height * 0.9)}
+      modalHeight={Math.min(height - 150, height * 0.8)}
     >
       <View style={styles.paymentModalContainer}>
         <Text style={styles.addPaymentTitle}>Add a payment</Text>

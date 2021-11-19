@@ -5,8 +5,6 @@ import { useFonts } from 'expo-font';
 import { ThemeProvider } from 'react-native-elements';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { theme, fontConfig } from 'styles';
-import { UserProvider } from 'contexts/user';
-import { RoomProvider } from 'contexts/room';
 import RootStack from 'navigation/RootStack';
 import Toast from 'react-native-toast-message';
 import ContextProviders from 'contexts/provider';
